@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FE Tech Church - Tecnología con Propósito</title>
+    <meta name="description" content="Iglesia FE Tech Church - Un lugar donde la fe y la tecnología se encuentran. Servicios, chatbot de WhatsApp, devocionales y más.">
+    <meta name="keywords" content="iglesia, tecnología, chatbot, WhatsApp, devocional, fe, church">
+    <meta name="author" content="FE Tech Church">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d1b4a 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9ff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #1a237e;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #ffd700;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Horarios */
+        .horarios {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 20px;
+        }
+
+        .horario-item {
+            display: inline-block;
+            margin: 15px 30px;
+            text-align: center;
+        }
+
+        .horario-dia {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .horario-hora {
+            font-size: 1.1rem;
+        }
+
+        /* Comandos del bot */
+        .comandos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .comando {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .horario-item {
+                display: block;
+                margin: 15px 0;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/521234567890?text=Hola%20FE%20Tech%20Church%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" 
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Chat en WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            FE TECH <span>CHURCH</span>
+        </div>
+        <div class="tagline">
+            <i class="fas fa-church"></i> Tecnología con Propósito <i class="fas fa-microchip"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Sección de horarios destacada -->
+<section style="margin-top: -30px; position: relative; z-index: 2;">
+    <div class="container">
+        <div class="horarios">
+            <h2 style="margin-bottom: 20px;"><i class="far fa-calendar-alt"></i> Horarios de Servicios</h2>
+            <div>
+                <div class="horario-item">
+                    <div class="horario-dia"><i class="fas fa-sun"></i> DOMINGO</div>
+                    <div class="horario-hora">11:00 AM - Culto Principal</div>
+                    <div class="horario-hora">4:00 PM - Vespertino</div>
+                </div>
+                <div class="horario-item">
+                    <div class="horario-dia"><i class="fas fa-moon"></i> MARTES</div>
+                    <div class="horario-hora">7:00 PM - Servicio Familiar</div>
+                </div>
+                <div class="horario-item">
+                    <div class="horario-dia"><i class="fas fa-pray"></i> LUNES</div>
+                    <div class="horario-hora">7:00 PM - Oración y Ayuno</div>
+                </div>
+                <div class="horario-item">
+                    <div class="horario-dia"><i class="fas fa-bible"></i> JUEVES</div>
+                    <div class="horario-hora">7:00 PM - Servicio General</div>
+                </div>
+            </div>
+            <p style="margin-top: 30px;"><i class="fas fa-map-marker-alt"></i> Tezozomoc MZ 40 LT1 esq. Ilhuicamina. Los Reyes Culhuacán</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección del Chatbot -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-robot"></i> Chatbot FE Tech Church</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fab fa-whatsapp"></i>
+                <h3>Disponible 24/7</h3>
+                <p>Nuestro chatbot de WhatsApp está siempre disponible para ti, sin importar la hora o el día.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-praying-hands"></i>
+                <h3>Peticiones de Oración</h3>
+                <p>Envía tus peticiones de oración y un líder estará intercediendo por ti.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>Devocional Diario</h3>
+                <p>Recibe un versículo, reflexión y oración cada día para fortalecer tu fe.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <h3 style="color: #1a237e;">📱 Cómo usar el chatbot</h3>
+            <p style="margin: 15px 0;">Guarda nuestro número y envía <strong>ayuda</strong> para comenzar</p>
+            <div class="comandos">
+                <span class="comando">horarios</span>
+                <span class="comando">devocional</span>
+                <span class="comando">oracion [texto]</span>
+                <span class="comando">info</span>
+                <span class="comando">eventos</span>
+                <span class="comando">pastor</span>
+                <span class="comando">saludo</span>
+                <span class="comando">ayuda</span>
+            </div>
+            <a href="https://wa.me/521234567890?text=%21ayuda" 
+               style="display: inline-block; margin-top: 30px; background: #25D366; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600;">
+                <i class="fab fa-whatsapp"></i> Inciar Conversación en WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de la App -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-mobile-alt"></i> Emanuel App</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-dove"></i>
+                <h3>Devocional Diario</h3>
+                <p>Comienza tu día con la Palabra de Dios y una reflexión inspiradora.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bell"></i>
+                <h3>Notificaciones Push</h3>
+                <p>Recibe recordatorios de eventos, devocionales y avisos importantes.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-music"></i>
+                <h3>Coros e Himnos</h3>
+                <p>Busqueda de Coros e Himnos para tu adoración.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; color: white;">
+            <i class="fas fa-mobile-alt" style="font-size: 2rem;"></i>
+            <h3 style="margin: 10px 0;">Descarga Emanuel App</h3>
+            <p>Ya disponible en Android. Versión iOS próximamente.</p>
+            <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://play.google.com/store/apps/details?id=tech.fe.app&amp;pcampaignid=web_share" 
+                   target="_blank" 
+                   style="display: inline-flex; align-items: center; gap: 10px; background: #000000; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; transition: transform 0.3s, background 0.3s;">
+                    <i class="fab fa-android" style="font-size: 1.6rem;"></i>
+                    <span style="font-weight: 600;">Google Play</span>
+                </a>
+                
+                <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.2); padding: 12px 25px; border-radius: 50px;">
+                    <i class="fab fa-apple" style="font-size: 1.6rem;"></i>
+                    <span style="font-weight: 600;">Próximamente</span>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.9;">
+                <i class="fas fa-download"></i> ¡Descárgala ahora y lleva la iglesia a tu celular!
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Información -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-info-circle"></i> Información</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-church"></i>
+                <h3>Dirección</h3>
+                <p>Tezozomoc MZ 40 LT1 esq. Ilhuicamina<br>Los Reyes Culhuacán</p>
+                <a href="https://maps.app.goo.gl/YvP7c2xjqvw9gqs6" target="_blank" style="color: #764ba2;">Ver en Google Maps →</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Pastores</h3>
+                <p>Pastor Roberto<br>Pastor Marcial<br>Pastor Saúl</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone"></i>
+                <h3>Contacto</h3>
+                <p>📞 56 3742 8610</p>
+                <p>✉️ iglesiaemanuelreyesdelsur3@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Eventos -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Próximos Eventos</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Escuela Bíblica de vacaciones</h3>
+                <p>📅 Julio/Agosto 2026</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-music"></i>
+                <h3>Concierto de Alabanza</h3>
+                <p>📅 Agosto 2026</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bible"></i>
+                <h3>Mes de la Biblia</h3>
+                <p>📅 Agosto 2026</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Sección de Campaña: Emanuel App en iOS -->
+<section class="section" style="background: linear-gradient(135deg, #f5f7fa 0%, #e9eef5 100%);">
+    <div class="container">
+        <h2 class="section-title" style="color: #1a237e;">
+            <i class="fas fa-mobile-alt"></i> ¡Próximamente en iOS!
+        </h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px auto;">
+            Ayúdanos a llevar la Emanuel App a cada rincón, sin importar el dispositivo. <br>
+            <strong>¡Que ningún creyente se quede fuera!</strong>
+        </p>
+
+        <div class="cards-grid">
+            <!-- Tarjeta: Lo que hicimos -->
+            <div class="card">
+                <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                <h3>✅ ¿Qué hicimos?</h3>
+                <p>Desarrollamos una aplicación espiritual con:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li>📖 Devocionales diarios</li>
+                    <li>🤝 Conexión con la comunidad</li>
+                    <li>🎵 Himnario siempre accesible</li>
+                </ul>
+                <p style="margin-top: 15px;">Actualmente disponible en <strong>Google Play Store</strong>.</p>
+            </div>
+
+            <!-- Tarjeta: Lo que falta -->
+            <div class="card">
+                <i class="fas fa-question-circle" style="color: #ffc107;"></i>
+                <h3>🤔 ¿Qué falta?</h3>
+                <p>La app está completamente lista para iPhone. Necesitamos cubrir la membresía anual de <strong>Apple Developer</strong> para publicarla en la App Store.</p>
+                <p><em>Nosotros ya hicimos la parte técnica. ¡Tú puedes ayudar con la parte que falta!</em></p>
+            </div>
+
+            <!-- Tarjeta: Desglose de Fondos -->
+            <div class="card">
+                <i class="fas fa-chart-line" style="color: #17a2b8;"></i>
+                <h3>📊 Desglose de lo que se necesita</h3>
+                <ul style="text-align: left;">
+                    <li><strong>Membresía Apple Developer:</strong> $1,980 MXN</li>
+                    <li><strong>Comisión de plataforma:</strong> $100 – $200 MXN</li>
+                    <li><strong>Consumo de devocionales (1,000):</strong> Incluido</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Total estimado:</strong> $2,080 – $3,180 MXN (~$105–$110 USD)</p>
+                <small>Cualquier excedente se destinará al mantenimiento anual de la cuenta o a mejoras en la app.</small>
+            </div>
+        </div>
+
+        <!-- Llamada a la acción y botón de donación -->
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <i class="fas fa-heart" style="font-size: 3rem; color: #ff4757;"></i>
+            <h3 style="margin: 15px 0; color: #1a237e;">Con tu apoyo, damos un paso juntos</h3>
+            <p style="max-width: 600px; margin: 0 auto 25px auto;">
+                Tu donación no solo cubre un requisito técnico: <strong>abre la puerta para que nadie se quede fuera</strong>. 
+                Ayúdanos a llevar esta herramienta de fe a todos los corazones que la necesitan.
+            </p>
+            <a href="https://gofund.me/1a085307b" 
+               target="_blank" 
+               style="display: inline-block; background: linear-gradient(135deg, #1a237e 0%, #0d1b4a 100%); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s;">
+                <i class="fab fa-gofundme"></i> Dona hoy en GoFundMe
+            </a>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">
+                <i class="fas fa-shield-alt"></i> Tus donaciones están protegidas por la Garantía de donaciones de GoFundMe
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100090664795443" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/iglesiaemanuel_reyesdelsur/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@Iglesia-Emanuel-Reyes-del-Sur" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/5215564271241" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2026 FE Tech Church - Tecnología con Propósito</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">
+            <i class="fas fa-heart" style="color: #ffd700;"></i> Una iglesia que ama y sirve a Dios
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
