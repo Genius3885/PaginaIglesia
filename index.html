@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Iglesia Emanuel - App y Bot desarrollados por Fe.Tecc</title>
-    <meta name="description" content="Iglesia Emanuel - App oficial y Bot de WhatsApp desarrollados por Fe.Tecc. Devocionales, horarios, oración y más.">
-    <meta name="keywords" content="iglesia emanuel, tecnología, chatbot, WhatsApp, devocional, fe, church, fe.tecc">
-    <meta name="author" content="Fe.Tecc para Iglesia Emanuel">
+    <title>Fe.Tecc - Tecnología con propósito eterno</title>
+    <meta name="description" content="Fe.Tecc: Desarrollo de apps y bots con propósito. Ayudamos a la Iglesia Emanuel con su app oficial y bot de WhatsApp. Tecnología al servicio de la fe.">
+    <meta name="keywords" content="Fe.Tecc, desarrollo de apps, chatbot, WhatsApp, iglesia, tecnología cristiana, emanuel app">
+    <meta name="author" content="Fe.Tecc">
     
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -23,16 +23,16 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f1f5f9;
             line-height: 1.6;
         }
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, #1a237e 0%, #0d1b4a 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -45,13 +45,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.03)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
             background-size: cover;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
         .logo {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 20px;
             position: relative;
@@ -59,7 +59,8 @@
         }
 
         .logo span {
-            color: #ffd700;
+            color: #a855f7;
+            text-shadow: 0 0 10px rgba(168,85,247,0.5);
         }
 
         .tagline {
@@ -67,6 +68,26 @@
             opacity: 0.95;
             position: relative;
             z-index: 1;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(168,85,247,0.5);
         }
 
         /* Container */
@@ -78,22 +99,25 @@
 
         /* Sections */
         .section {
-            padding: 60px 0;
-            background: white;
+            padding: 70px 0;
+            background: #0f172a;
             margin-bottom: 20px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .section:nth-child(even) {
-            background: #f8f9ff;
+            background: #1e1b4b;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: #1a237e;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #c084fc, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             position: relative;
             padding-bottom: 15px;
         }
@@ -104,9 +128,10 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 3px;
-            background: #ffd700;
+            background: #a855f7;
+            border-radius: 3px;
         }
 
         /* Cards Grid */
@@ -118,73 +143,49 @@
         }
 
         .card {
-            background: white;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 24px;
+            transition: transform 0.3s ease, background 0.3s ease;
             text-align: center;
+            border: 1px solid rgba(168,85,247,0.2);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            background: rgba(168,85,247,0.1);
+            border-color: rgba(168,85,247,0.5);
         }
 
         .card i {
             font-size: 3rem;
-            color: #764ba2;
+            color: #a855f7;
             margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #1a237e;
+            color: #c084fc;
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
 
-        /* Horarios */
-        .horarios {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        /* Proyecto destacado */
+        .proyecto-destacado {
+            background: linear-gradient(135deg, #1e1b4b, #2d2a5e);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid rgba(168,85,247,0.3);
+        }
+
+        /* Testimonios */
+        .testimonio {
+            background: rgba(255,255,255,0.03);
+            border-radius: 24px;
+            padding: 30px;
             text-align: center;
-            padding: 50px 20px;
-            border-radius: 20px;
-        }
-
-        .horario-item {
-            display: inline-block;
-            margin: 15px 30px;
-            text-align: center;
-        }
-
-        .horario-dia {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffd700;
-        }
-
-        .horario-hora {
-            font-size: 1.1rem;
-        }
-
-        /* Comandos del bot */
-        .comandos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .comando {
-            background: #f0f0f0;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #764ba2;
-            font-weight: 600;
+            border-left: 4px solid #a855f7;
         }
 
         /* Botón flotante de WhatsApp */
@@ -214,10 +215,10 @@
 
         /* Footer */
         .footer {
-            background: #1a237e;
-            color: white;
+            background: #020617;
+            color: #94a3b8;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             margin-top: 40px;
         }
 
@@ -226,52 +227,24 @@
         }
 
         .social-links a {
-            color: white;
+            color: #94a3b8;
             margin: 0 15px;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #ffd700;
-        }
-        
-        /* Badge de Fe.Tecc */
-        .fe-tecc-badge {
-            background: rgba(255, 255, 255, 0.95);
-            color: #1a237e;
-            padding: 8px 20px;
-            border-radius: 40px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            margin-top: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .fe-tecc-badge i {
-            font-size: 1.3rem;
-            color: #764ba2;
-        }
-        
-        .credits-bar {
-            background: linear-gradient(90deg, #ffd700, #ffb347);
-            color: #1a237e;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            color: #a855f7;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 40px 20px;
+                padding: 50px 20px 70px;
             }
             
             .logo {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .tagline {
@@ -279,303 +252,218 @@
             }
             
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
-            .horario-item {
-                display: block;
-                margin: 15px 0;
+            .proyecto-destacado {
+                padding: 25px;
             }
-            
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+        
+        /* badges */
+        .tech-badge {
+            display: inline-block;
+            background: rgba(168,85,247,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #c084fc;
+            margin: 5px;
         }
     </style>
 </head>
 <body>
 
 <!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/521234567890?text=Hola%20Iglesia%20Emanuel%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" 
+<a href="https://wa.me/521234567890?text=Hola%20Fe.Tecc%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" 
    class="whatsapp-float" 
    target="_blank"
    aria-label="Chat en WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- Barra de crédito: Fe.Tecc desarrollador -->
-<div class="credits-bar">
-    <i class="fas fa-code"></i> App y Bot desarrollados por <strong>Fe.Tecc</strong> - Tecnología al servicio de la fe <i class="fas fa-heart" style="color: #d63031;"></i>
-</div>
-
 <!-- Header -->
 <header class="header">
     <div class="container">
         <div class="logo">
-            IGLESIA <span>EMANUEL</span>
+            Fe.<span>Tecc</span>
         </div>
         <div class="tagline">
-            <i class="fas fa-church"></i> Fe, Comunidad y Tecnología <i class="fas fa-microchip"></i>
+            <i class="fas fa-code"></i> Tecnología con propósito eterno <i class="fas fa-heart" style="color: #f43f5e;"></i>
         </div>
-        <div class="fe-tecc-badge">
-            <i class="fas fa-crown"></i> Desarrollado por Fe.Tecc (dueño del proyecto técnico)
-            <i class="fas fa-robot"></i>
-        </div>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">Desarrollamos soluciones digitales que transforman comunidades y acercan la fe a más personas.</p>
+        <a href="#proyectos" class="btn-primary"><i class="fas fa-arrow-down"></i> Ver nuestros proyectos</a>
     </div>
 </header>
 
-<!-- Sección de horarios destacada -->
-<section style="margin-top: -30px; position: relative; z-index: 2;">
+<!-- Sección Sobre Nosotros -->
+<section class="section">
     <div class="container">
-        <div class="horarios">
-            <h2 style="margin-bottom: 20px;"><i class="far fa-calendar-alt"></i> Horarios de Servicios</h2>
-            <div>
-                <div class="horario-item">
-                    <div class="horario-dia"><i class="fas fa-sun"></i> DOMINGO</div>
-                    <div class="horario-hora">11:00 AM - Culto Principal</div>
-                    <div class="horario-hora">4:00 PM - Vespertino</div>
-                </div>
-                <div class="horario-item">
-                    <div class="horario-dia"><i class="fas fa-moon"></i> MARTES</div>
-                    <div class="horario-hora">7:00 PM - Servicio Familiar</div>
-                </div>
-                <div class="horario-item">
-                    <div class="horario-dia"><i class="fas fa-pray"></i> LUNES</div>
-                    <div class="horario-hora">7:00 PM - Oración y Ayuno</div>
-                </div>
-                <div class="horario-item">
-                    <div class="horario-dia"><i class="fas fa-bible"></i> JUEVES</div>
-                    <div class="horario-hora">7:00 PM - Servicio General</div>
-                </div>
+        <h2 class="section-title"><i class="fas fa-users"></i> Sobre Fe.Tecc</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Somos un equipo de desarrollo con un propósito claro: usar la tecnología para servir a la iglesia y a causas con impacto eterno.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px;">
+                <span class="tech-badge"><i class="fab fa-react"></i> React Native</span>
+                <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                <span class="tech-badge"><i class="fas fa-robot"></i> Chatbots IA</span>
+                <span class="tech-badge"><i class="fab fa-whatsapp"></i> WhatsApp API</span>
             </div>
-            <p style="margin-top: 30px;"><i class="fas fa-map-marker-alt"></i> Tezozomoc MZ 40 LT1 esq. Ilhuicamina. Los Reyes Culhuacán</p>
         </div>
     </div>
 </section>
 
-<!-- Sección del Chatbot (desarrollado por Fe.Tecc) -->
+<!-- Sección PROYECTO DESTACADO: Iglesia Emanuel -->
+<section id="proyectos" class="section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-star-of-life"></i> Proyecto Destacado</h2>
+        
+        <div class="proyecto-destacado">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <i class="fas fa-church" style="font-size: 3.5rem; color: #c084fc;"></i>
+                <h3 style="font-size: 2rem; margin: 15px 0; color: white;">Iglesia Emanuel</h3>
+                <p style="font-size: 1.1rem;">Desarrollo completo de App Móvil + Bot de WhatsApp</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fab fa-android"></i>
+                    <h3>Emanuel App</h3>
+                    <p>Aplicación oficial para la Iglesia Emanuel con devocionales diarios, notificaciones push e himnario integrado.</p>
+                    <ul style="text-align: left; margin-top: 15px; list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Devocional diario automatizado</li>
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Biblioteca de coros e himnos</li>
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Recordatorios de eventos</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Bot Inteligente</h3>
+                    <p>Asistente virtual en WhatsApp para la comunidad de Iglesia Emanuel, disponible 24/7.</p>
+                    <ul style="text-align: left; margin-top: 15px; list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Respuesta automática a comandos</li>
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Envío de devocionales programados</li>
+                        <li><i class="fas fa-check-circle" style="color: #22c55e;"></i> Canal de peticiones de oración</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center; background: rgba(0,0,0,0.3); border-radius: 20px; padding: 25px;">
+                <h4><i class="fas fa-tools"></i> Nuestro trabajo con Iglesia Emanuel</h4>
+                <p>Fe.Tecc desarrolló <strong>desde cero</strong> tanto la aplicación móvil como el bot de WhatsApp, donando el desarrollo para apoyar el ministerio. Actualmente la app está disponible en Google Play y el bot atiende a cientos de feligreses.</p>
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 20px;">
+                    <div>
+                        <i class="fas fa-download"></i> App en Play Store<br>
+                        <small>+500 descargas</small>
+                    </div>
+                    <div>
+                        <i class="fas fa-comments"></i> Bot activo 24/7<br>
+                        <small>+2000 interacciones/mes</small>
+                    </div>
+                    <div>
+                        <i class="fas fa-heart"></i> Desarrollo donado<br>
+                        <small>Por amor al ministerio</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://play.google.com/store/apps/details?id=tech.fe.app" target="_blank" class="btn-primary" style="background: #000; margin-right: 15px;">
+                    <i class="fab fa-android"></i> Ver en Google Play
+                </a>
+                <a href="https://wa.me/521234567890?text=ayuda" target="_blank" class="btn-primary" style="background: #25D366;">
+                    <i class="fab fa-whatsapp"></i> Probar el Bot
+                </a>
+            </div>
+        </div>
+        
+        <!-- Testimonio de la Iglesia -->
+        <div class="testimonio">
+            <i class="fas fa-quote-left" style="font-size: 2rem; color: #a855f7; opacity: 0.5;"></i>
+            <p style="font-style: italic; max-width: 700px; margin: 15px auto;">"Fe.Tecc no solo desarrolló nuestra app y bot, lo hicieron con excelencia y corazón de servicio. Han bendecido enormemente nuestra comunidad."</p>
+            <p><strong>— Pastores Iglesia Emanuel</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección: ¿Qué ofrecemos? -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-robot"></i> Chatbot de WhatsApp - Iglesia Emanuel</h2>
+        <h2 class="section-title"><i class="fas fa-cogs"></i> Nuestros Servicios</h2>
         <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Desarrollo de Apps</h3>
+                <p>Aplicaciones móviles nativas para Android e iOS con contenido dinámico y notificaciones push.</p>
+            </div>
             <div class="card">
                 <i class="fab fa-whatsapp"></i>
-                <h3>Disponible 24/7</h3>
-                <p>Chatbot creado por <strong>Fe.Tecc</strong>. Siempre disponible para la comunidad.</p>
+                <h3>Bots de WhatsApp</h3>
+                <p>Automatización de respuestas, envío de contenido programado y atención 24/7 para tu comunidad.</p>
             </div>
             <div class="card">
-                <i class="fas fa-praying-hands"></i>
-                <h3>Peticiones de Oración</h3>
-                <p>Envía tus peticiones de oración y un líder estará intercediendo por ti.</p>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Publicación en Stores</h3>
+                <p>Te ayudamos con todo el proceso de publicación en Google Play y App Store.</p>
             </div>
-            <div class="card">
-                <i class="fas fa-book-open"></i>
-                <h3>Devocional Diario</h3>
-                <p>Recibe un versículo, reflexión y oración cada día. Automatizado por Fe.Tecc.</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <h3 style="color: #1a237e;">📱 ¿Cómo funciona el bot?</h3>
-            <p style="margin: 15px 0;">Desarrollado íntegramente por <strong>Fe.Tecc</strong> para Iglesia Emanuel. Guarda el número y envía <strong>ayuda</strong>.</p>
-            <div class="comandos">
-                <span class="comando">horarios</span>
-                <span class="comando">devocional</span>
-                <span class="comando">oracion [texto]</span>
-                <span class="comando">info</span>
-                <span class="comando">eventos</span>
-                <span class="comando">pastor</span>
-                <span class="comando">saludo</span>
-                <span class="comando">ayuda</span>
-            </div>
-            <a href="https://wa.me/521234567890?text=%21ayuda" 
-               style="display: inline-block; margin-top: 30px; background: #25D366; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600;">
-                <i class="fab fa-whatsapp"></i> Probar el Bot en WhatsApp
-            </a>
         </div>
     </div>
 </section>
 
-<!-- Sección de la App (desarrollada por Fe.Tecc) -->
+<!-- Sección: ¿Por qué trabajar con Fe.Tecc? -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-mobile-alt"></i> Emanuel App - Desarrollo por Fe.Tecc</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <i class="fas fa-dove"></i>
-                <h3>Devocional Diario</h3>
-                <p>Comienza tu día con la Palabra de Dios. Contenido integrado por Fe.Tecc.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bell"></i>
-                <h3>Notificaciones Push</h3>
-                <p>Recibe recordatorios de eventos y devocionales gracias a la infraestructura de Fe.Tecc.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-music"></i>
-                <h3>Coros e Himnos</h3>
-                <p>Búsqueda de himnos para adoración, funcionalidad implementada por Fe.Tecc.</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; color: white;">
-            <i class="fas fa-mobile-alt" style="font-size: 2rem;"></i>
-            <h3 style="margin: 10px 0;">Descarga Emanuel App</h3>
-            <p>App oficial de Iglesia Emanuel, desarrollada y mantenida por <strong>Fe.Tecc</strong>. Disponible en Android.</p>
-            <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="https://play.google.com/store/apps/details?id=tech.fe.app&amp;pcampaignid=web_share" 
-                   target="_blank" 
-                   style="display: inline-flex; align-items: center; gap: 10px; background: #000000; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; transition: transform 0.3s, background 0.3s;">
-                    <i class="fab fa-android" style="font-size: 1.6rem;"></i>
-                    <span style="font-weight: 600;">Google Play</span>
-                </a>
-                
-                <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.2); padding: 12px 25px; border-radius: 50px;">
-                    <i class="fab fa-apple" style="font-size: 1.6rem;"></i>
-                    <span style="font-weight: 600;">Próximamente (iOS)</span>
-                </div>
-            </div>
-            <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.9;">
-                <i class="fas fa-copyright"></i> App creada por Fe.Tecc para glorificar a Dios y servir a la Iglesia Emanuel.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de Información -->
-<section class="section">
-    <div class="container">
-        <h2 class="section-title"><i class="fas fa-info-circle"></i> Información</h2>
+        <h2 class="section-title"><i class="fas fa-hand-holding-heart"></i> ¿Por qué elegirnos?</h2>
         <div class="cards-grid">
             <div class="card">
                 <i class="fas fa-church"></i>
-                <h3>Dirección</h3>
-                <p>Tezozomoc MZ 40 LT1 esq. Ilhuicamina<br>Los Reyes Culhuacán</p>
-                <a href="https://maps.app.goo.gl/YvP7c2xjqvw9gqs6" target="_blank" style="color: #764ba2;">Ver en Google Maps →</a>
+                <h3>Entendemos tu contexto</h3>
+                <p>No solo somos técnicos, conocemos las necesidades de iglesias y ministerios.</p>
             </div>
             <div class="card">
-                <i class="fas fa-users"></i>
-                <h3>Pastores</h3>
-                <p>Pastor Roberto<br>Pastor Marcial<br>Pastor Saúl</p>
+                <i class="fas fa-gift"></i>
+                <h3>Apoyo a ministerios</h3>
+                <p>Ofrecemos condiciones especiales para proyectos con impacto comunitario.</p>
             </div>
             <div class="card">
-                <i class="fas fa-phone"></i>
-                <h3>Contacto</h3>
-                <p>📞 56 3742 8610</p>
-                <p>✉️ iglesiaemanuelreyesdelsur3@gmail.com</p>
+                <i class="fas fa-headset"></i>
+                <h3>Soporte continuo</h3>
+                <p>Acompañamiento después del lanzamiento y garantía de funcionamiento.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Sección de Eventos -->
+<!-- Sección de contacto / presupuesto -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Próximos Eventos</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Escuela Bíblica de vacaciones</h3>
-                <p>📅 Julio/Agosto 2026</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-music"></i>
-                <h3>Concierto de Alabanza</h3>
-                <p>📅 Agosto 2026</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bible"></i>
-                <h3>Mes de la Biblia</h3>
-                <p>📅 Agosto 2026</p>
+        <h2 class="section-title"><i class="fas fa-envelope"></i> Hablemos de tu proyecto</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 30px;">¿Tienes una idea? Nos encantaría ayudarte a hacerla realidad.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://wa.me/521234567890" class="btn-primary" style="background: #25D366;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:contacto@fe-tech.church" class="btn-primary" style="background: #3b82f6;">
+                    <i class="fas fa-envelope"></i> contacto@fe-tech.church
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Sección de Campaña para iOS con crédito a Fe.Tecc -->
-<section class="section" style="background: linear-gradient(135deg, #f5f7fa 0%, #e9eef5 100%);">
-    <div class="container">
-        <h2 class="section-title" style="color: #1a237e;">
-            <i class="fas fa-mobile-alt"></i> ¡Próximamente en iOS!
-        </h2>
-        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px auto;">
-            La App y el Bot ya están <strong>desarrollados por Fe.Tecc</strong>. Ahora necesitamos fondos para la membresía Apple Developer.
-            <strong>¡Que ningún creyente se quede fuera!</strong>
-        </p>
-
-        <div class="cards-grid">
-            <!-- Tarjeta: Lo que hicimos (Fe.Tecc) -->
-            <div class="card">
-                <i class="fas fa-check-circle" style="color: #28a745;"></i>
-                <h3>✅ ¿Qué hizo Fe.Tecc?</h3>
-                <p><strong>Fe.Tecc</strong> desarrolló completamente:</p>
-                <ul style="text-align: left; margin-top: 15px;">
-                    <li>📖 App Emanuel con devocionales diarios</li>
-                    <li>🤝 Conexión con la comunidad</li>
-                    <li>🎵 Himnario siempre accesible</li>
-                    <li>🤖 Bot de WhatsApp inteligente</li>
-                </ul>
-                <p style="margin-top: 15px;">Actualmente disponible en <strong>Google Play Store</strong>.</p>
-            </div>
-
-            <!-- Tarjeta: Lo que falta (financiamiento) -->
-            <div class="card">
-                <i class="fas fa-question-circle" style="color: #ffc107;"></i>
-                <h3>🤔 ¿Qué falta?</h3>
-                <p>La app está lista para iPhone. Necesitamos cubrir la membresía anual de <strong>Apple Developer</strong> (desarrollo ya hecho por Fe.Tecc).</p>
-                <p><em>Fe.Tecc ya puso el trabajo técnico. ¡La comunidad puede ayudar con la publicación!</em></p>
-            </div>
-
-            <!-- Tarjeta: Desglose de Fondos -->
-            <div class="card">
-                <i class="fas fa-chart-line" style="color: #17a2b8;"></i>
-                <h3>📊 Desglose de lo que se necesita</h3>
-                <ul style="text-align: left;">
-                    <li><strong>Membresía Apple Developer:</strong> $1,980 MXN</li>
-                    <li><strong>Comisión de plataforma:</strong> $100 – $200 MXN</li>
-                    <li><strong>Consumo de devocionales (1,000):</strong> Incluido por Fe.Tecc</li>
-                </ul>
-                <p style="margin-top: 15px;"><strong>Total estimado:</strong> $2,080 – $3,180 MXN (~$105–$110 USD)</p>
-                <small>Cualquier excedente se destinará al mantenimiento anual de la cuenta o a mejoras.</small>
-            </div>
-        </div>
-
-        <!-- Llamada a la acción y botón de donación -->
-        <div style="text-align: center; margin-top: 50px; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            <i class="fas fa-heart" style="font-size: 3rem; color: #ff4757;"></i>
-            <h3 style="margin: 15px 0; color: #1a237e;">Fe.Tecc dona el desarrollo, tú ayudas con la publicación</h3>
-            <p style="max-width: 600px; margin: 0 auto 25px auto;">
-                <strong>Fe.Tecc</strong> ha regalado el desarrollo de la App y el Bot a Iglesia Emanuel. 
-                Tu donación cubre solo los gastos de la tienda de aplicaciones para iOS.  
-                <strong>¡Juntos llevamos la fe a más personas!</strong>
-            </p>
-            <a href="https://gofund.me/1a085307b" 
-               target="_blank" 
-               style="display: inline-block; background: linear-gradient(135deg, #1a237e 0%, #0d1b4a 100%); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s;">
-                <i class="fab fa-gofundme"></i> Dona hoy en GoFundMe
-            </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">
-                <i class="fas fa-shield-alt"></i> Tus donaciones están protegidas. ¡Gracias por apoyar!
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Footer con crédito final -->
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=100090664795443" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/iglesiaemanuel_reyesdelsur/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Iglesia-Emanuel-Reyes-del-Sur" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/5215564271241" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/fe-tecc" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/company/fe-tecc" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/fe_tecc" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>© 2026 Iglesia Emanuel - App y Bot desarrollados por <strong>Fe.Tecc</strong></p>
+        <p>© 2026 Fe.Tecc - Tecnología con propósito eterno</p>
         <p style="margin-top: 10px; font-size: 0.8rem;">
-            <i class="fas fa-crown"></i> Fe.Tecc: Tecnología con propósito eterno | Dueño del proyecto técnico
-        </p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">
-            <i class="fas fa-heart" style="color: #ffd700;"></i> Una iglesia que ama y sirve a Dios
+            Desarrollamos la App y el Bot de <strong>Iglesia Emanuel</strong> como parte de nuestro compromiso con la fe y la tecnología.
         </p>
     </div>
 </footer>
